@@ -1,4 +1,4 @@
-from notation import board_position_to_matrix_indices
+from src.notation import board_position_to_matrix_indices
 
 def test_board_position_to_matrix_indices_basic():
     i, j = board_position_to_matrix_indices("h8")

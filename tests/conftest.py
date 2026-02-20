@@ -1,5 +1,6 @@
 import pytest
-from gamestate import GameState
+
+from src.gamestate import GameState
 
 
 @pytest.fixture
