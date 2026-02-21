@@ -44,7 +44,7 @@ class Board():
             file = "a"
             for cell in row:
                 file_value = ord(file) - ord('a')
-                # Alternate colors
+                # Alternate tile colors
                 if (rank + file_value) % 2 == 0:
                     bg = ANSI_WHITE  # white
                 else:

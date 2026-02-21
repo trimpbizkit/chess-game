@@ -1,6 +1,16 @@
-# chess-game
+# What is chess-game?
 
 a small chess project for learning & educational purposes
+
+1. what
+2. it
+3. can
+4. do?
+
+## How to clone and run
+
+**todo**
+
 
 ## Feature Roadmap
 
@@ -18,9 +28,15 @@ a small chess project for learning & educational purposes
 - turn timer
 - redraw board display instead of subsequent prints
 - move history alongside board
-- undo/redo stacks
+- undo/redo
 - snapshot board states afer moves
 - load board state from move history input (file, paste string)
+- Portable Game Notation (PGN)
 - load puzzle
 - identify opening variations
 - play against computer
+
+## Using Data Structures?
+
+- valid moves trie (prefix tree)
+- played moves stack
