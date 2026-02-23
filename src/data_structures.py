@@ -6,20 +6,22 @@ class TrieNode:
 class Trie:
     def __init__(self):
         self.root = TrieNode()
-        self.num_words = 0
+        self.num_entries = 0
+        self.entries = []
 
-    def insert(self, word: str):
+    def insert(self, entry: str):
         current = self.root
-        for ch in word:
+        for ch in entry:
             if ch not in current.children:
                 current.children[ch] = TrieNode()
             current = current.children[ch]
         current.is_end = True
-        self.num_words += 1
+        self.num_entries += 1
+        self.entries.append(entry)
 
-    def has_word(self, word):
+    def has_entry(self, entry):
         try:
-            node = self.goto_prefix(word)
+            node = self.goto_prefix(entry)
             return node.is_end
         except ValueError:
             return False

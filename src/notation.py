@@ -53,3 +53,4 @@ def parse_algebraic_notation(move):
     3. if neither file nor rank alone is sufficient, both are specified
     '''
     named_pieces = ["K", "Q", "R", "B", "N"]
+    pass
