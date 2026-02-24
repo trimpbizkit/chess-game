@@ -7,11 +7,6 @@ from src.gamestate import (
 from src.pieces import (
     Pawn
 )
-from src.data_structures import (
-    Trie,
-    TrieNode
-)
-
 
 @pytest.fixture
 def initial_gamestate():

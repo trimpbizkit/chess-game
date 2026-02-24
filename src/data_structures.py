@@ -7,7 +7,6 @@ class Trie:
     def __init__(self):
         self.root = TrieNode()
         self.num_entries = 0
-        self.entries = []
 
     def insert(self, entry: str):
         current = self.root
@@ -17,7 +16,6 @@ class Trie:
             current = current.children[ch]
         current.is_end = True
         self.num_entries += 1
-        self.entries.append(entry)
 
     def has_entry(self, entry):
         try:
@@ -49,3 +47,44 @@ class Trie:
             return walk_subtree_recursive(node)
         except ValueError:
             return 0
+
+    def list_full_entries(self):
+        def walk_subtree_recursive(node, current_keys):
+            end_terms = []
+            if node.is_end:
+                end_terms.append(current_keys)
+            for ch in node.children:
+                new_keys = current_keys
+                new_keys.extend(ch)
+                end_terms.extend(walk_subtree_recursive(node.children[ch], new_keys))
+            return end_terms
+        
+        full_key_lists = walk_subtree_recursive(self.root, [])
+        # logic for full_key_list being substrings to join
+        full_entries = []
+        for key_list in full_key_lists:
+            full_entries.append("".join(key_list))
+        return full_entries
+
+class Stack:
+    def __init__(self):
+        self._stack = []
+
+    def push(self, item):
+        self._stack.append(item)
+
+    def pop(self):
+        if not self._stack:
+            return None
+        return self._stack.pop()
+    
+    def peek(self):
+        if not self._stack:
+            return None
+        return self._stack[-1]
+    
+    def is_empty(self):
+        return len(self._stack) == 0
+    
+    def size(self):
+        return len(self._stack)
