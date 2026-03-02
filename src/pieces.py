@@ -55,7 +55,7 @@ class Piece:
         return f"{chr(new_file)}{from_position[1]}"
 
     def list_possible_moves(self):
-        raise NotImplementedError(f"must implement *list_valid_moves*")
+        raise NotImplementedError(f"must implement *list_possible_moves*")
 
 
 class Pawn(Piece):
@@ -64,8 +64,8 @@ class Pawn(Piece):
         super().__init__(position, player, PieceType.PAWN)
 
     def list_possible_moves(self, gamestate: GameState):
-        possible_moves = self.calculate_possible_moves(gamestate)
-        return possible_moves.entries
+        possible_moves_trie = self.calculate_possible_moves(gamestate)
+        return possible_moves_trie.list_full_entries()
     
     def calculate_possible_moves(self, gamestate: GameState):
         possible_moves = Trie()

@@ -30,6 +30,12 @@ class GameState():
         piece = self.get_piece_at_board_position(board_position)
         return Player.WHITE if piece.isupper() else Player.BLACK
     
+    def change_turn(self):
+        if self.turn == Player.WHITE:
+            self.turn = Player.BLACK
+            return
+        self.turn = Player.WHITE
+        
     def print_state(self):
         print(f"It is {self.turn.value}'s turn")
         print(self.board)
