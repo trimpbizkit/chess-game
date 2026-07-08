@@ -38,5 +38,5 @@ a small chess project for learning & educational purposes
 
 ## Using Data Structures?
 
-- valid moves trie (prefix tree)
+- valid moves trie (prefix tree), maybe this more useful to search openings from trie
 - played moves stack
